@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/mystyle.css" />
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 55vh;
+        padding-top: 60px;
+        padding-bottom: 48px;
+        overflow: hidden;
+      }
+      .swiper-slide {
+        /* width: 500px !important; */
+        text-align: center;
+        font-size: 18px;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+      }
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active {
+        transform: scale(1);
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main">
+      <nav class="top-nav">
+        <div class="left-nav">
+          <div class="flyout-menu-wrapper">
+            <div class="flyout-menu">
+              <div class="flyout-heading">
+                <h2>Explore vacations</h2>
+              </div>
+              <div class="scroll-flyout-wrapper">
+                <div class="vacation-continents">
+                  <div class="flyout-info-box">
+                    <div class="subtitle-intro-wrapper">
+                      <div class="subtitle">Choose a Continent</div>
+                      <div class="horizontal-line"></div>
+                    </div>
+                    <div class="continent-list">
+                      <div class="listitem">
+                        <a class="location-card africa-card">
+                          <div class="location-name africa-name">
+                            <h4>Africa</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon africa-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="listitem">
+                        <a class="location-card asia-card">
+                          <div class="location-name asia-name">
+                            <h4>Asia</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon asia-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="listitem">
+                        <a class="location-card europe-card">
+                          <div class="location-name europe-name">
+                            <h4>Europe</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">12</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon europe-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flyout-info-box">
+                    <div class="subtitle-intro-wrapper">
+                      <div class="subtitle">Choose a destination</div>
+                      <div class="horizontal-line"></div>
+                    </div>
+                    <div class="continent-list">
+                      <div class="listitem">
+                        <a class="location-card france-card">
+                          <div class="location-name france-name">
+                            <h4>France</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon france-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="listitem">
+                        <a class="location-card indo-card">
+                          <div class="location-name indo-name">
+                            <h4>Indonesia</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon indo-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="listitem">
+                        <a class="location-card greece-card">
+                          <div class="location-name greece-name">
+                            <h4>Greece</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon greece-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="listitem">
+                        <a class="location-card egypt-card">
+                          <div class="location-name egypt-name">
+                            <h4>Egypt</h4>
+                            <div class="subtitle-dynamic-text">
+                              <div class="subtitle">6</div>
+                              <div class="subtitle">vacations</div>
+                            </div>
+                          </div>
+                          <div class="card-arrow-icon egypt-icon">
+                            <img src="/icons/circle-play-regular.svg" />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="left-nav-icon open" src="/icons/bars-solid.svg" />
+          <img class="left-nav-icon close" src="/icons/xmark-solid.svg" />
+        </div>
+        <div class="right-top-nav"></div>
+        <div class="right-nav">
+          <a href="/" class="brand">
+            <div><span class="thin-span">Co</span>Villa</div>
+          </a>
+          <div class="nav-menu-links">
+            <a href="./about.html" class="nav-link">About </a>
+            <a href="/journal" class="nav-link">Journal</a>
+            <a href="/support" class="nav-link">Support</a>
+          </div>
+          <div class="right-button">
+            <div class="nav-button">
+              <div class="dropdown-text">destination</div>
+              <img
+                class="right-nav-icon down"
+                src="/icons/chevron-down-solid.svg"
+              />
+              <img
+                class="right-nav-icon up"
+                src="/icons/chevron-up-solid.svg"
+              />
+            </div>
+            <!-- <nav class="dropdown-list"> -->
+            <div class="dropdown-wrapper">
+              <div class="subtitle-intro-wrapper">
+                <div class="subtitle">Choose a location</div>
+                <div class="horizontal-line"></div>
+              </div>
+              <div class="destinations-list">
+                <div class="listitem">
+                  <a class="location-card france-card">
+                    <div class="location-name france-name">
+                      <h4>France</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card indo-card">
+                    <div class="location-name indo-name">
+                      <h4>Indonesia</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card greece-card">
+                    <div class="location-name greece-name">
+                      <h4>Greece</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card egypt-card">
+                    <div class="location-name egypt-name">
+                      <h4>Egypt</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- </nav> -->
+          </div>
+        </div>
+      </nav>
+      <div class="grid-wrapper">
+        <div class="home-hero-content">
+          <div class="home-hero-intro">
+            <div class="home-hero-title">
+              <div class="subtitle white">Family travel agency</div>
+              <h1 class="xxl-heading">Let's plan your next vacation</h1>
+            </div>
+            <a class="button white">contact us</a>
+          </div>
+          <div class="hero-video-button">
+            <div class="box">
+              <div class="video">
+                <video
+                  src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/60785e47c656dc751d6416ef_Video002-transcode.mp4"
+                  controls
+                  autoplay
+                  muted
+                  class="video playvideo"
+                ></video>
+                <div class="outer">
+                  <div class="inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="subtitle-intro-wrapper popular-location">
+            <div class="subtitle white">Popular location</div>
+            <div class="horizontal-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-bottom">
+        <div class="bottom-grid-wrapper">
+          <div class="location-wrapper">
+            <div>
+              <div class="slider-arrow-right">
+                <img src="/icons/arrow-right-solid.svg" class="featured-icon" />
+              </div>
+              <div class="slider-arrow-left">
+                <img src="/icons/arrow-left-solid.svg" class="featured-icon" />
+              </div>
+            </div>
+            <a class="featured-location">
+              <h3>Thessaloniki, Greece</h3>
+              <div class="subtitle">Starting at $6700</div>
+            </a>
+          </div>
+          <a class="featured-location-icon">
+            <img src="/icons/chevron-right-solid.svg" class="featured-icon" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <section class="destinations">
+      <div class="section-wrapper">
+        <div
+          class="centered-intro"
+          style="
+            grid-column-end: 3;
+            grid-column-start: 2;
+            justify-self: center;
+            align-self: center;
+          "
+        >
+          <div class="subtitle">Covilla Destinations</div>
+          <h1>Across the world</h1>
+        </div>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide1">
+            <div class="subtitle-dynamic-text">
+              <div class="subtitle">6</div>
+              <div class="subtitle">vacations</div>
+            </div>
+            <h2>Indonesia</h2>
+          </div>
+          <div class="swiper-slide slide2">
+            <div class="subtitle-dynamic-text">
+              <div class="subtitle">6</div>
+              <div class="subtitle">vacations</div>
+            </div>
+            <h2>Greece</h2>
+          </div>
+          <div class="swiper-slide slide3">
+            <div class="subtitle-dynamic-text">
+              <div class="subtitle">6</div>
+              <div class="subtitle">vacations</div>
+            </div>
+            <h2>Egypt</h2>
+          </div>
+          <div class="swiper-slide slide4">
+            <div class="subtitle-dynamic-text">
+              <div class="subtitle">6</div>
+              <div class="subtitle">vacations</div>
+            </div>
+            <h2>France</h2>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <section class="benefits section-wrapper">
+      <div class="benefits-wrapper">
+        <div class="intro-wrapper">
+          <div class="intro-content">
+            <div>
+              <div class="subtitle-wrapper">
+                <div class="subtitle">Covilla benefits</div>
+              </div>
+              <div class="stacked-intro">
+                <h1>Take your family on the best vacation</h1>
+                <div class="body-display large">
+                  Donec sed auctor orci. In a nisl vel nisi egestas efficitur
+                  nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi.
+                  Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+                  facilisis elit, vitae.
+                </div>
+              </div>
+            </div>
+            <div class="nav-button benefit-button">
+              <div class="dropdown-text">choose a destination</div>
+              <img
+                class="right-nav-icon benefit-down"
+                src="/icons/chevron-down-solid.svg"
+              />
+              <img
+                class="right-nav-icon benefit-up"
+                src="/icons/chevron-up-solid.svg"
+              />
+            </div>
+            <!-- <nav class="dropdown-list"> -->
+            <div class="dropdown-wrapper benefit-dropdown">
+              <div class="subtitle-intro-wrapper">
+                <div class="subtitle">Choose a location</div>
+                <div class="horizontal-line"></div>
+              </div>
+              <div class="destinations-list">
+                <div class="listitem">
+                  <a class="location-card france-card">
+                    <div class="location-name france-name">
+                      <h4>France</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card indo-card">
+                    <div class="location-name indo-name">
+                      <h4>Indonesia</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card greece-card">
+                    <div class="location-name greece-name">
+                      <h4>Greece</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+                <div class="listitem">
+                  <a class="location-card egypt-card">
+                    <div class="location-name egypt-name">
+                      <h4>Egypt</h4>
+                      <div class="subtitle-dynamic-text">
+                        <div class="subtitle">6</div>
+                        <div class="subtitle">vacations</div>
+                      </div>
+                    </div>
+                    <div class="card-arrow-icon africa-icon">
+                      <img src="/icons/circle-play-regular.svg" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- </nav> -->
+          </div>
+          <div class="intro-right-image"></div>
+        </div>
+        <div class="benefits-bottom">
+          <div class="subtitle-intro-wrapper">
+            <div class="subtitle">Why we're different</div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="benefits-box">
+            <div class="benefit-card card1">
+              <div class="benefit-icon">
+                <img
+                  src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607de725aadcc55501bb2e9e_Passport.svg"
+                />
+              </div>
+              <div class="benefit-description">
+                <h3>Hands-on planning</h3>
+                <div class="body-display small">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </div>
+              </div>
+            </div>
+            <div class="benefit-card card2">
+              <div class="benefit-icon">
+                <img
+                  src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607de75f12ac9913a3643e65_Deals.svg"
+                />
+              </div>
+              <div class="benefit-description">
+                <h3>Added value & perks</h3>
+                <div class="body-display small">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </div>
+              </div>
+            </div>
+            <div class="benefit-card card3">
+              <div class="benefit-icon">
+                <img
+                  src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607de7788cdec20d82446914_Case.svg"
+                />
+              </div>
+              <div class="benefit-description">
+                <h3>Access best deals</h3>
+                <div class="body-display small">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </div>
+              </div>
+            </div>
+            <div class="benefit-card card4">
+              <div class="benefit-icon">
+                <img
+                  src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607de73f1afa67ce64a6b7a0_Location%20marker.svg"
+                />
+              </div>
+              <div class="benefit-description">
+                <h3>Personalized</h3>
+                <div class="body-display small">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonial-section">
+      <div class="section-wrapper">
+        <div class="testimonial-wrapper">
+          <div class="testimonial-content animate">
+            <div class="body-display large white testimonial-inner-content">
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique nisi.
+              Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+              facilisis elit, vitae lobortis enim.
+            </div>
+            <h3 class="testimonial-client">Samantha Vohnhale</h3>
+          </div>
+          <div class="testimonial-button">
+            <div class="testimonial-left-arrow">
+              <img
+                src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/6078a246a9b7d42719a6708f_arrow-left(24x24)%402x%20(1).svg"
+                class="slider-circle-arrow-icon"
+              />
+            </div>
+            <div class="testimonial-right-arrow">
+              <img
+                src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/6078a23053127e30625b981a_arrow-right(24x24)%402x%20(1).svg"
+                class="slider-circle-arrow-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="popular-vacation">
+      <div class="section-wrapper section-background">
+        <div class="membership-plans-wrapper">
+          <div class="subtitle-intro-wrapper">
+            <div class="subtitle white">Popular covilla Vacations</div>
+            <div class="horizontal-line light"></div>
+          </div>
+          <div class="vacations-tabs-wrapper">
+            <div class="vacations-tab-menu">
+              <a class="vacations-tab-link link1"
+                >Egypt
+                <div class="membership-circle circle1">
+                  <div class="membership-dot one dot1"></div>
+                  <div class="membership-outline-circle"></div>
+                </div>
+              </a>
+              <a class="vacations-tab-link link2 gray-bottom"
+                >Greece
+                <div class="membership-circle circle2">
+                  <div class="membership-dot two dot2"></div>
+                  <div class="membership-outline-circle fade-circle"></div>
+                </div>
+              </a>
+              <a class="vacations-tab-link link3 gray-bottom"
+                >Indonesia
+                <div class="membership-circle circle3">
+                  <div class="membership-dot two dot3"></div>
+                  <div class="membership-outline-circle fade-circle"></div>
+                </div>
+              </a>
+              <a class="vacations-tab-link link4 gray-bottom"
+                >France
+                <div class="membership-circle circle4">
+                  <div class="membership-dot two dot4"></div>
+                  <div class="membership-outline-circle fade-circle"></div>
+                </div>
+              </a>
+            </div>
+            <div class="vacations-tabs-content">
+              <div class="vacations-verticle-card">
+                <div class="verticle-card-image">
+                  <div class="hero-background-image card-image1"></div>
+                </div>
+                <div class="vacation-card-bottom">
+                  <div class="vacation-card-info">
+                    <h3>Bahariya Oasis</h3>
+                    <div class="body-display small">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget.
+                    </div>
+                  </div>
+                  <div class="vacation-details">
+                    <div class="vacation-price">
+                      <div class="subtitle small">Rates from</div>
+                      <div class="dynamic-price-text">
+                        <div>$ 6400</div>
+                      </div>
+                    </div>
+                    <a href="/vacations/bahariya-oasis" class="outline-button">
+                      <div>Details</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="vacations-verticle-card">
+                <div class="verticle-card-image">
+                  <div class="hero-background-image card-image2"></div>
+                </div>
+                <div class="vacation-card-bottom">
+                  <div class="vacation-card-info">
+                    <h3>Sahl Hasheesh</h3>
+                    <div class="body-display small">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget.
+                    </div>
+                  </div>
+                  <div class="vacation-details">
+                    <div class="vacation-price">
+                      <div class="subtitle small">Rates from</div>
+                      <div class="dynamic-price-text">
+                        <div>$ 7700</div>
+                      </div>
+                    </div>
+                    <a href="/vacations/bahariya-oasis" class="outline-button">
+                      <div>Details</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="vacations-verticle-card">
+                <div class="verticle-card-image">
+                  <div class="hero-background-image card-image3"></div>
+                </div>
+                <div class="vacation-card-bottom">
+                  <div class="vacation-card-info">
+                    <h3>Alexandria</h3>
+                    <div class="body-display small">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget.
+                    </div>
+                  </div>
+                  <div class="vacation-details">
+                    <div class="vacation-price">
+                      <div class="subtitle small">Rates from</div>
+                      <div class="dynamic-price-text">
+                        <div>$ 5300</div>
+                      </div>
+                    </div>
+                    <a href="/vacations/bahariya-oasis" class="outline-button">
+                      <div>Details</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-wrapper section-background">
+        <div class="promise-wrapper">
+          <div class="section-intro">
+            <div class="promise-intro">
+              <div>
+                <div class="subtitle-wrapper">
+                  <div class="subtitle">Covilla Promise</div>
+                </div>
+                <h1>
+                  Get unparalleled peace of mind from start to finish of your
+                  trip
+                </h1>
+              </div>
+              <div class="dual-buttons">
+                <a href="/support" class="button white"><div>Contact us</div></a
+                ><a href="#steps" class="outline-button white"
+                  ><div>How it works</div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="steps">
+      <div class="section-wrapper">
+        <div class="steps-grid">
+          <div class="steps-sticky-card">
+            <div class="how-to-image">
+              <div class="hero-background-image steps-background"></div>
+            </div>
+            <div class="steps-intro">
+              <div class="steps-description">
+                <div>
+                  <div class="subtitle-wrapper">
+                    <div class="subtitle">Get started today</div>
+                  </div>
+                  <h2>Take the stress out of planning vacations</h2>
+                </div>
+                <div class="body-display large">
+                  Donec sed auctor orci. In a nisl vel nisi egestas efficitur
+                  nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi.
+                </div>
+              </div>
+              <a href="/about" class="nav-button button benefit-button"
+                ><div>Meet your travel agents</div></a
+              >
+            </div>
+          </div>
+          <div class="steps-cards">
+            <div class="subtitle-intro-wrapper steps-subtitle-wrapper">
+              <div class="subtitle">How it works</div>
+              <div class="horizontal-line"></div>
+            </div>
+            <div class="steps-tracker">
+              <div class="how-it-works-fill"></div>
+            </div>
+            <div class="steps-card-wrapper">
+              <div class="steps-card">
+                <div class="steps-circle">
+                  <div class="steps-dot"></div>
+                  <div class="card-arrow"></div>
+                  <div class="steps-circle-outline"></div>
+                </div>
+                <div class="steps-content">
+                  <div class="steps-icon">
+                    <div>1</div>
+                  </div>
+                  <div class="steps-description">
+                    <h3>First, clone this template.</h3>
+                    <div class="body-display">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget velit ut sollicitudin. Nunc
+                      ullamcorper nibh nulla. In viverra id felis id tincidunt.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="steps-card">
+                <div class="steps-circle">
+                  <div class="steps-dot"></div>
+                  <div class="card-arrow"></div>
+                  <div class="steps-circle-outline"></div>
+                </div>
+                <div class="steps-content">
+                  <div class="steps-icon">
+                    <div>2</div>
+                  </div>
+                  <div class="steps-description">
+                    <h3>Next, use it on your projects.</h3>
+                    <div class="body-display">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget velit ut sollicitudin. Nunc
+                      ullamcorper nibh nulla. In viverra id felis id tincidunt.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="steps-card">
+                <div class="steps-circle">
+                  <div class="steps-dot"></div>
+                  <div class="card-arrow"></div>
+                  <div class="steps-circle-outline"></div>
+                </div>
+                <div class="steps-content">
+                  <div class="steps-icon">
+                    <div>3</div>
+                  </div>
+                  <div class="steps-description">
+                    <h3>Then, tell me what you think.</h3>
+                    <div class="body-display">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget velit ut sollicitudin. Nunc
+                      ullamcorper nibh nulla. In viverra id felis id tincidunt.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="steps-card">
+                <div class="steps-circle">
+                  <div class="steps-dot"></div>
+                  <div class="card-arrow"></div>
+                  <div class="steps-circle-outline"></div>
+                </div>
+                <div class="steps-content">
+                  <div class="steps-icon">
+                    <div>4</div>
+                  </div>
+                  <div class="steps-description">
+                    <h3>Finally, share the template.</h3>
+                    <div class="body-display">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sollicitudin eget velit ut sollicitudin. Nunc
+                      ullamcorper nibh nulla. In viverra id felis id tincidunt.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-us">
+      <div class="section-wrapper section-background">
+        <div class="outer-wrapper"></div>
+        <div class="about-wrapper">
+          <div class="subtitle">About covilla</div>
+          <div class="about-intro">
+            <h2>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit ut sollicitudin. Nunc ullamcorper nibh
+              nulla.
+            </h2>
+          </div>
+          <div class="stacked-paragraphs">
+            <div class="body-display">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit ut sollicitudin. Nunc ullamcorper nibh
+              nulla. In viverra id felis id tincidunt.
+            </div>
+            <div class="body-display">
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique nisi.
+              Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+              facilisis elit, vitae lobortis enim.
+            </div>
+          </div>
+        </div>
+        <div class="about-images-wrapper">
+          <div class="about-images">
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team1"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6af17c67770ae3de1541_Family001.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team2"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6c801c6cc62928080d5c_Family003.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team3"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6ccb8c09f127ee426222_Family004.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team4"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6d1847737e3cad7ace73_Family005.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team5"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dcd6f4c797d614a152a89_Family0012.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-item">
+              <div class="team-image-lightbox">
+                <div
+                  class="team-background-image team6"
+                  data-imgsrc="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6e34994877bde5d7d81b_Family007.jpeg"
+                >
+                  <div class="overlay extra-light"></div>
+                </div>
+                <div class="team-image-location">
+                  <div class="team-location-icon">
+                    <img
+                      src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="subtitle">View image</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team-members">
+      <div class="section-wrapper section-background">
+        <div class="outer-wrapper"></div>
+        <div class="team-wrapper">
+          <div class="subtitle-intro-wrapper">
+            <div class="subtitle team-subtitle">Meet your travel agents</div>
+            <div class="horizontal-line"></div>
+            <a href="/about" class="outline-button small"
+              ><div>About us</div></a
+            >
+          </div>
+          <div class="team-box">
+            <div class="team-card">
+              <div class="team-image">
+                <div class="hero-background-image teamcard-image1"></div>
+              </div>
+              <div class="team-name">
+                <div class="name"><h3>Terry Von</h3></div>
+                <div class="team-location"><div>New York, New York</div></div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-image">
+                <div class="hero-background-image teamcard-image2"></div>
+              </div>
+              <div class="team-name">
+                <div class="name"><h3>Sarah Prat</h3></div>
+                <div class="team-location"><div>Austin, Texas</div></div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-image">
+                <div class="hero-background-image teamcard-image3"></div>
+              </div>
+              <div class="team-name">
+                <div class="name"><h3>Samantha Tai</h3></div>
+                <div class="team-location"><div>Miami, Florida</div></div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-image">
+                <div class="hero-background-image teamcard-image4"></div>
+              </div>
+              <div class="team-name">
+                <div class="name"><h3>Craig Wents</h3></div>
+                <div class="team-location"><div>Brooklyn, New York</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="popular-posts">
+      <div class="section-wrapper section-background">
+        <div class="featured-journal-wrapper">
+          <div class="list-image-wrapper">
+            <div class="large-journal-post">
+              <div class="large-journal-image">
+                <div class="hero-background-image post-image"></div>
+              </div>
+              <div class="journal-post-info">
+                <div class="large-journal-content">
+                  <div class="journal-category-tag">
+                    <div>April 19, 2021</div>
+                  </div>
+                  <h2>What Will Website Be Like In 100 Years?</h2>
+                  <div class="body-display">
+                    Donec sed auctor orci. In a nisl vel nisi egestas efficitur
+                    nec ac neque. Sed vitae sollicitudin elit, ac tristique.
+                  </div>
+                </div>
+                <a
+                  href="/journal-post/what-will-website-be-like-in-100-years"
+                  class="outline-button small"
+                  ><div>Read more</div></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="journal-right-wrapper">
+            <div class="subtitle-intro-wrapper">
+              <div class="subtitle">Popular posts</div>
+              <div class="horizontal-line"></div>
+            </div>
+            <div class="recent-journal-list">
+              <a
+                href="/journal-post/7-of-the-best-examples-of-beautiful-blog-design"
+                class="journal-list-item"
+                ><div class="journal-list-image">
+                  <div class="hero-background-image journal-list-image1"></div>
+                </div>
+                <div class="journal-list-item-content">
+                  <div class="journal-category-tag">
+                    <div>April 19, 2021</div>
+                  </div>
+                  <div class="journal-list-info">
+                    <div>7 of the Best Examples of Beautiful Blog Design</div>
+                  </div>
+                </div></a
+              >
+              <a
+                href="/journal-post/designers-who-changed-the-web"
+                class="journal-list-item"
+                ><div class="journal-list-image">
+                  <div class="hero-background-image journal-list-image2"></div>
+                </div>
+                <div class="journal-list-item-content">
+                  <div class="journal-category-tag">
+                    <div>April 19, 2021</div>
+                  </div>
+                  <div class="journal-list-info">
+                    <div>Designers Who Changed the Web</div>
+                  </div>
+                </div></a
+              >
+              <a
+                href="/journal-post/10-web-design-blogs-you-cant-miss"
+                class="journal-list-item"
+                ><div class="journal-list-image">
+                  <div class="hero-background-image journal-list-image3"></div>
+                </div>
+                <div class="journal-list-item-content">
+                  <div class="journal-category-tag">
+                    <div>April 19, 2021</div>
+                  </div>
+                  <div class="journal-list-info">
+                    <div>10 Web Design Blogs You Can't Miss</div>
+                  </div>
+                </div></a
+              >
+              <a
+                href="/journal-post/5-principles-of-effective-web-design"
+                class="journal-list-item"
+                ><div class="journal-list-image">
+                  <div class="hero-background-image journal-list-image4"></div>
+                </div>
+                <div class="journal-list-item-content">
+                  <div class="journal-category-tag">
+                    <div>April 19, 2021</div>
+                  </div>
+                  <div class="journal-list-info">
+                    <div>5 Principles Of Effective Web Design</div>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="section-wrapper section-background footer-line">
+        <div class="footer-wrapper">
+          <div class="footer-pages">
+            <div class="footer-destination-text"><div>Destinations</div></div>
+            <div class="footer-destinations">
+              <div class="footer-listitem footer-france">
+                <a href="/location/france" class="footer-link"
+                  ><div class="link-text">France</div></a
+                >
+              </div>
+              <div class="footer-listitem footer-indonesia">
+                <a href="/location/indonesia" class="footer-link"
+                  ><div class="link-text">Indonesia</div></a
+                >
+              </div>
+              <div class="footer-listitem footer-greece">
+                <a href="/location/greece" class="footer-link"
+                  ><div class="link-text">Greece</div></a
+                >
+              </div>
+              <div class="footer-listitem footer-egypt">
+                <a href="/location/egypt" class="footer-link"
+                  ><div class="link-text">Egypt</div></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footer-logo"><span class="thin-span">co</span>villa</div>
+          <div class="credit-text">© 2021 COVILLA</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<!-- Swiper JS -->
+<script src="../swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<script>
+  const openIcon = document.querySelector(".open");
+  const closeIcon = document.querySelector(".close");
+  const upIcon = document.querySelector(".up");
+  const downIcon = document.querySelector(".down");
+  const arrowIcon = document.querySelector(".card-arrow-icon");
+  const leftArrow = document.querySelector(".slider-arrow-left");
+  const rightArrow = document.querySelector(".slider-arrow-right");
+  const benefitDownIcon = document.querySelector(".benefit-down");
+  const benefitUpIcon = document.querySelector(".benefit-up");
+  const testimonialLeftArrow = document.querySelector(
+    ".testimonial-left-arrow"
+  );
+  const testimonialRightArrow = document.querySelector(
+    ".testimonial-right-arrow"
+  );
+
+  const flyoutMenuWrapper = document.querySelector(".flyout-menu-wrapper");
+  const flyoutMenu = document.querySelector(".flyout-menu");
+
+  const inner = document.querySelector(".inner");
+  const outer = document.querySelector(".outer");
+  const video = document.querySelector(".video");
+  const box = document.querySelector(".box");
+  const innervideo = document.querySelector("video");
+
+  const link1 = document.querySelector(".link1");
+  const link2 = document.querySelector(".link2");
+  const link3 = document.querySelector(".link3");
+  const link4 = document.querySelector(".link4");
+
+  const dot1 = document.querySelector(".dot1");
+  const dot2 = document.querySelector(".dot2");
+  const dot3 = document.querySelector(".dot3");
+  const dot4 = document.querySelector(".dot4");
+
+  const circle1 = document.querySelector(".circle1");
+  const circle2 = document.querySelector(".circle2");
+  const circle3 = document.querySelector(".circle3");
+  const circle4 = document.querySelector(".circle4");
+
+  const outline1 = document.querySelector(
+    ".circle1 .membership-outline-circle"
+  );
+  const outline2 = document.querySelector(
+    ".circle2 .membership-outline-circle"
+  );
+  const outline3 = document.querySelector(
+    ".circle3 .membership-outline-circle"
+  );
+  const outline4 = document.querySelector(
+    ".circle4 .membership-outline-circle"
+  );
+
+  const aboutImages = document.querySelector(".about-images");
+  const imageItem = document.querySelectorAll(".about-image-item");
+  const overlay = document.querySelector(".overlay");
+
+  const dropdown = document.querySelector(".dropdown-wrapper");
+  const gridWrapper = document.querySelector(".grid-wrapper");
+  const locationName = document.querySelector(".featured-location h3");
+  const price = document.querySelector(".featured-location .subtitle");
+  const benefitButton = document.querySelector(".benefit-button");
+  const benefitDropdown = document.querySelector(".benefit-dropdown");
+
+  const testimonialContent = document.querySelector(
+    ".testimonial-inner-content"
+  );
+  const testimonialClient = document.querySelector(".testimonial-client");
+  const testimonialOuterContent = document.querySelector(
+    ".testimonial-content"
+  );
+
+  const imageArray = [
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg",
+  ];
+  const locationArray = [
+    "Thessaloniki, Greece",
+    "Bahariya Oasis, Egypt",
+    "Denpasar, Indonesia",
+  ];
+  const priceArray = [
+    "Starting at $6700",
+    "Starting at $6400",
+    "Starting at $1900",
+  ];
+  const worldImage = [
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd1ef1d9b0b767714525_001.jpeg",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
+  ];
+  const worldLocation = ["France", "Indonesia", "Greece", "Egypt"];
+  let index = 0;
+  let testimonialIndex = 0;
+
+  const testimonialContentArray = [
+    "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+  ];
+
+  const testimonialClientArray = [
+    "Samantha Vohnhale",
+    "Wilson Tomales",
+    "Tammy Georgeon",
+    "Emily Camphon",
+    "Cassie Shamath",
+  ];
+
+  window.addEventListener("scroll", function () {
+    let rightNav = document.querySelector(".right-top-nav");
+    let menuLinks = document.querySelector(".nav-menu-links");
+    let links = document.querySelectorAll(".nav-link");
+    let brand = document.querySelector(".brand");
+    let navButton = document.querySelector(".nav-button");
+
+    let scroll = document.documentElement.scrollTop;
+
+    if (scroll > 0 && scroll < 80) {
+      rightNav.style.marginTop = -81 + scroll + "px";
+      menuLinks.style.opacity = (scroll / 80).toString();
+      links.forEach((link) => (link.style.color = "white"));
+    } else if (scroll >= 80) {
+      rightNav.style.marginTop = "0";
+      menuLinks.style.opacity = "1";
+      navButton.style.color = "black";
+      links.forEach((link) => (link.style.color = "black"));
+      brand.style.color = "black"; // Set brand color to black when scrolling beyond 80
+    } else {
+      rightNav.style.marginTop = "-81px"; // Hide the nav when scroll is 0
+      menuLinks.style.opacity = "0"; // Hide the menu links when scroll is 0
+      links.forEach((link) => (link.style.color = "white"));
+      navButton.style.color = "white";
+      brand.style.color = "white"; // Set brand color to white when scroll is 0
+    }
+
+    rightNav.style.position = "fixed"; // Ensure the nav is fixed
+    console.log("scroll");
+  });
+
+  openIcon.addEventListener("click", () => {
+    openIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    flyoutMenu.classList.add("slide-in");
+    flyoutMenuWrapper.classList.add("appear");
+  });
+  closeIcon.addEventListener("click", () => {
+    openIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    flyoutMenu.classList.remove("slide-in");
+    flyoutMenuWrapper.classList.remove("appear");
+  });
+  upIcon.addEventListener("click", () => {
+    upIcon.style.display = "none";
+    downIcon.style.display = "block";
+    dropdown.classList.remove("appear");
+  });
+  downIcon.addEventListener("click", () => {
+    upIcon.style.display = "block";
+    downIcon.style.display = "none";
+    dropdown.classList.add("appear");
+  });
+
+  leftArrow.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+    } else {
+      index = imageArray.length - 1;
+    }
+    locationName.classList.remove("animate");
+    price.classList.remove("animate2");
+    void gridWrapper.offsetWidth;
+    locationName.classList.add("animate");
+    price.classList.add("animate2");
+    gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
+    locationName.innerHTML = `${locationArray[index]}`;
+    price.innerHTML = `${priceArray[index]}`;
+  });
+  rightArrow.addEventListener("click", () => {
+    if (index < imageArray.length - 1) {
+      index++;
+    } else {
+      index = 0;
+    }
+    locationName.classList.remove("animate");
+    price.classList.remove("animate2");
+    void gridWrapper.offsetWidth;
+    locationName.classList.add("animate");
+    price.classList.add("animate2");
+    gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
+    gridWrapper.style.transition = "backgroundImage 1s";
+    locationName.innerHTML = `${locationArray[index]}`;
+    price.innerHTML = `${priceArray[index]}`;
+  });
+
+  testimonialLeftArrow.addEventListener("click", () => {
+    if (testimonialIndex > 0) {
+      testimonialIndex--;
+    } else {
+      testimonialIndex = testimonialClientArray.length - 1;
+    }
+    testimonialOuterContent.classList.remove("animate");
+    void testimonialOuterContent.offsetWidth;
+    testimonialOuterContent.classList.add("animate");
+    testimonialContent.innerHTML = `${testimonialContentArray[testimonialIndex]}`;
+    testimonialClient.innerHTML = `${testimonialClientArray[testimonialIndex]}`;
+  });
+  testimonialRightArrow.addEventListener("click", () => {
+    if (testimonialIndex < testimonialClientArray.length - 1) {
+      testimonialIndex++;
+    } else {
+      testimonialIndex = 0;
+    }
+    testimonialOuterContent.classList.remove("animate");
+    void testimonialOuterContent.offsetWidth;
+    testimonialOuterContent.classList.add("animate");
+    testimonialContent.innerHTML = `${testimonialContentArray[testimonialIndex]}`;
+    testimonialClient.innerHTML = `${testimonialClientArray[testimonialIndex]}`;
+  });
+
+  benefitDownIcon.addEventListener("click", () => {
+    benefitUpIcon.style.display = "block";
+    benefitDownIcon.style.display = "none";
+    benefitDropdown.classList.add("appear");
+  });
+  benefitUpIcon.addEventListener("click", () => {
+    benefitDownIcon.style.display = "block";
+    benefitUpIcon.style.display = "none";
+    benefitDropdown.classList.remove("appear");
+  });
+
+  outer.addEventListener("mouseenter", () => {
+    outer.style.backgroundColor = "white";
+    inner.style.backgroundColor = "black";
+    box.style.border = "1px transparent solid";
+    video.style.border = "1px transparent solid";
+    video.style.animation = "video 2s infinite";
+    box.style.animation = "box 2s infinite";
+    innervideo.style.display = "block";
+  });
+  outer.addEventListener("mouseleave", () => {
+    outer.style.backgroundColor = "";
+    inner.style.backgroundColor = "rgba(192, 192, 211, 0.2)";
+    box.style.border = "";
+    video.style.border = "";
+    video.style.animation = "";
+    box.style.animation = "";
+    innervideo.style.display = "none";
+  });
+
+  imageItem.forEach((image) => {
+    image.addEventListener("mouseover", (e) => {
+      e.target.classList.remove("extra-light");
+      image.querySelectorAll(".team-image-location").forEach((item) => {
+        item.style.opacity = 1;
+        item.style.visibility = "visible";
+      });
+    });
+  });
+
+  imageItem.forEach((image) => {
+    image.addEventListener("mouseleave", (e) => {
+      e.target.querySelectorAll(".overlay").forEach((item) => {
+        item.classList.add("extra-light");
+      });
+      e.target.querySelectorAll(".team-image-location").forEach((item) => {
+        item.style.opacity = 0;
+        item.style.visibility = "hidden";
+      });
+    });
+  });
+
+  circle2.addEventListener("click", () => {
+    link2.classList.remove("gray-bottom");
+    dot2.classList.remove("two");
+    dot2.classList.add("one");
+    outline2.classList.remove("fade-circle");
+
+    if (dot2.classList.contains("one")) {
+      circle1.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+        link3.classList.add("gray-bottom");
+        dot3.classList.add("two");
+        dot3.classList.remove("one");
+        outline3.classList.add("fade-circle");
+        link2.classList.add("gray-bottom");
+        dot2.classList.add("two");
+        dot2.classList.remove("one");
+        outline2.classList.add("fade-circle");
+      });
+    }
+  });
+  circle3.addEventListener("click", () => {
+    link2.classList.remove("gray-bottom");
+    dot2.classList.remove("two");
+    dot2.classList.add("one");
+    outline2.classList.remove("fade-circle");
+    link3.classList.remove("gray-bottom");
+    dot3.classList.remove("two");
+    dot3.classList.add("one");
+    outline3.classList.remove("fade-circle");
+
+    if (dot3.classList.contains("one")) {
+      circle2.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+        link3.classList.add("gray-bottom");
+        dot3.classList.add("two");
+        dot3.classList.remove("one");
+        outline3.classList.add("fade-circle");
+      });
+      circle1.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+        link3.classList.add("gray-bottom");
+        dot3.classList.add("two");
+        dot3.classList.remove("one");
+        outline3.classList.add("fade-circle");
+        link2.classList.add("gray-bottom");
+        dot2.classList.add("two");
+        dot2.classList.remove("one");
+        outline2.classList.add("fade-circle");
+      });
+    }
+  });
+  circle4.addEventListener("click", () => {
+    link2.classList.remove("gray-bottom");
+    dot2.classList.remove("two");
+    dot2.classList.add("one");
+    outline2.classList.remove("fade-circle");
+    link3.classList.remove("gray-bottom");
+    dot3.classList.remove("two");
+    dot3.classList.add("one");
+    outline3.classList.remove("fade-circle");
+    link4.classList.remove("gray-bottom");
+    dot4.classList.remove("two");
+    dot4.classList.add("one");
+    outline4.classList.remove("fade-circle");
+
+    if (dot4.classList.contains("one")) {
+      circle3.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+      });
+
+      circle2.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+        link3.classList.add("gray-bottom");
+        dot3.classList.add("two");
+        dot3.classList.remove("one");
+        outline3.classList.add("fade-circle");
+      });
+
+      circle1.addEventListener("click", () => {
+        link4.classList.add("gray-bottom");
+        dot4.classList.add("two");
+        dot4.classList.remove("one");
+        outline4.classList.add("fade-circle");
+        link3.classList.add("gray-bottom");
+        dot3.classList.add("two");
+        dot3.classList.remove("one");
+        outline3.classList.add("fade-circle");
+        link2.classList.add("gray-bottom");
+        dot2.classList.add("two");
+        dot2.classList.remove("one");
+        outline2.classList.add("fade-circle");
+      });
+    }
+  });
+</script>
