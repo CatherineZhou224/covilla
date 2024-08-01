@@ -425,9 +425,7 @@ div.right-nav.sticky {
 .grid-wrapper {
   display: grid;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg");
-  background-size: 100% 100%;
+
   height: 100vh;
   width: 100%;
   grid-template-columns: minmax(80px, 1fr) minmax(auto, 1400px) minmax(
@@ -435,6 +433,19 @@ div.right-nav.sticky {
       1fr
     );
   grid-template-rows: 1fr;
+}
+
+.backgroundImageWrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg");
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1.5s ease-in-out;
+  z-index: -1; /* Ensure it stays behind the content */
 }
 
 .home-hero-content {
@@ -453,6 +464,7 @@ div.right-nav.sticky {
   justify-self: stretch;
   align-self: stretch;
   color: white;
+  z-index: 1;
 }
 
 .home-hero-intro {
@@ -747,6 +759,28 @@ div.right-nav.sticky {
 
 .slide4:hover {
   scale: 1;
+}
+
+.swiper-button {
+  display: flex;
+  justify-content: center;
+  margin-top: -38px;
+  margin-bottom: 15px;
+  gap: 8px;
+}
+
+.swiper-left-arrow,
+.swiper-right-arrow {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .benefits {
@@ -1571,25 +1605,25 @@ div.right-nav.sticky {
   grid-row-start: 3;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  margin-left: 80px;
 }
 
 .about-images {
   position: relative;
   z-index: 10;
   display: flex;
-  overflow: hidden;
   margin-left: 80px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .about-image-item {
   position: relative;
-  overflow: hidden;
   width: 25vw;
   height: 25vw;
   min-height: 25vw;
   min-width: 25vw;
-  margin-right: -1px;
-  margin-left: -1px;
   color: #fff;
   text-align: center;
 }

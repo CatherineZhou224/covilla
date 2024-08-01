@@ -267,6 +267,7 @@
         </div>
       </nav>
       <div class="grid-wrapper">
+        <div class="backgroundImageWrapper"></div>
         <div class="home-hero-content">
           <div class="home-hero-intro">
             <div class="home-hero-title">
@@ -280,7 +281,6 @@
               <div class="video">
                 <video
                   src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/60785e47c656dc751d6416ef_Video002-transcode.mp4"
-                  controls
                   autoplay
                   muted
                   class="video playvideo"
@@ -367,8 +367,22 @@
           </div>
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        <div class="swiper-button">
+          <div class="swiper-left-arrow">
+            <img
+              src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/6078a246a9b7d42719a6708f_arrow-left(24x24)%402x%20(1).svg"
+              class="slider-circle-arrow-icon"
+            />
+          </div>
+          <div class="swiper-right-arrow">
+            <img
+              src="https://assets.website-files.com/60675f13ea324fdd4af9ef2a/6078a23053127e30625b981a_arrow-right(24x24)%402x%20(1).svg"
+              class="slider-circle-arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </section>
     <section class="benefits section-wrapper">
@@ -1175,8 +1189,8 @@
     centeredSlides: true,
     loop: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-left-arrow",
+      prevEl: ".swiper-right-arrow",
     },
   });
 </script>
@@ -1240,6 +1254,9 @@
 
   const dropdown = document.querySelector(".dropdown-wrapper");
   const gridWrapper = document.querySelector(".grid-wrapper");
+  const backgroundImageWrapper = document.querySelector(
+    ".backgroundImageWrapper"
+  );
   const locationName = document.querySelector(".featured-location h3");
   const price = document.querySelector(".featured-location .subtitle");
   const benefitButton = document.querySelector(".benefit-button");
@@ -1348,37 +1365,77 @@
     dropdown.classList.add("appear");
   });
 
+  function updateContent() {
+    locationName.classList.remove("animate");
+    price.classList.remove("animate2");
+    void gridWrapper.offsetWidth; // Trigger reflow for the animations to restart
+
+    // Set the new background image and fade it in
+    backgroundImageWrapper.style.opacity = 0.2;
+    setTimeout(() => {
+      backgroundImageWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
+      backgroundImageWrapper.style.opacity = 1;
+
+      // Update text content
+      locationName.innerHTML = locationArray[index];
+      price.innerHTML = priceArray[index];
+
+      // Add animations back to the elements
+      locationName.classList.add("animate");
+      price.classList.add("animate2");
+    }, 1000); // Duration should match the transition duration in CSS
+  }
+
+  // Event listeners for arrow clicks
   leftArrow.addEventListener("click", () => {
     if (index > 0) {
       index--;
     } else {
       index = imageArray.length - 1;
     }
-    locationName.classList.remove("animate");
-    price.classList.remove("animate2");
-    void gridWrapper.offsetWidth;
-    locationName.classList.add("animate");
-    price.classList.add("animate2");
-    gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
-    locationName.innerHTML = `${locationArray[index]}`;
-    price.innerHTML = `${priceArray[index]}`;
+    updateContent();
   });
+
   rightArrow.addEventListener("click", () => {
     if (index < imageArray.length - 1) {
       index++;
     } else {
       index = 0;
     }
-    locationName.classList.remove("animate");
-    price.classList.remove("animate2");
-    void gridWrapper.offsetWidth;
-    locationName.classList.add("animate");
-    price.classList.add("animate2");
-    gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
-    gridWrapper.style.transition = "backgroundImage 1s";
-    locationName.innerHTML = `${locationArray[index]}`;
-    price.innerHTML = `${priceArray[index]}`;
+    updateContent();
   });
+
+  // leftArrow.addEventListener("click", () => {
+  //   if (index > 0) {
+  //     index--;
+  //   } else {
+  //     index = imageArray.length - 1;
+  //   }
+  //   locationName.classList.remove("animate");
+  //   price.classList.remove("animate2");
+  //   void gridWrapper.offsetWidth;
+  //   locationName.classList.add("animate");
+  //   price.classList.add("animate2");
+  //   gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
+  //   locationName.innerHTML = `${locationArray[index]}`;
+  //   price.innerHTML = `${priceArray[index]}`;
+  // });
+  // rightArrow.addEventListener("click", () => {
+  //   if (index < imageArray.length - 1) {
+  //     index++;
+  //   } else {
+  //     index = 0;
+  //   }
+  //   locationName.classList.remove("animate");
+  //   price.classList.remove("animate2");
+  //   void gridWrapper.offsetWidth;
+  //   locationName.classList.add("animate");
+  //   price.classList.add("animate2");
+  //   gridWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageArray[index]})`;
+  //   gridWrapper.style.transition = "backgroundImage 1s";
+  //   locationName.innerHTML = `${locationArray[index]}`;
+  //   price.innerHTML = `${priceArray[index]}`;
+  // });
 
   testimonialLeftArrow.addEventListener("click", () => {
     if (testimonialIndex > 0) {
@@ -1565,5 +1622,41 @@
         outline2.classList.add("fade-circle");
       });
     }
+  });
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const offset = -index * 10;
+    aboutImages.style.transform = `translateX(${offset}%)`;
+  }
+
+  function slideToNextImage() {
+    if (currentIndex < imageItem.length - 1) {
+      currentIndex++;
+      showImage(currentIndex);
+    }
+  }
+
+  function slideToPreviousImage() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showImage(currentIndex);
+    }
+  }
+
+  imageItem.forEach((item, index) => {
+    item.addEventListener("mouseover", (e) => {
+      const boundingRect = item.getBoundingClientRect();
+      const mouseX = e.clientX - boundingRect.left;
+
+      if (mouseX < boundingRect.width * 0.1) {
+        // Left 10% of the image
+        slideToPreviousImage();
+      } else if (mouseX > boundingRect.width * 0.9) {
+        // Right 10% of the image
+        slideToNextImage();
+      }
+    });
   });
 </script>
